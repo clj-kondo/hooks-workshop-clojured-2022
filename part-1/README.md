@@ -2,12 +2,13 @@
 
 Before hooks existed, clj-kondo already had a few ways to deal with macros. We will explain those using an example.
 
-Check out the awesome `when-let*` macro by Thierry Smeekes:
+Check out the `when-let*` macro:
 
 ``` clojure
 (ns hooks-workshop.macros)
 
 (defmacro when-let*
+  "Nested when-let."
   ([bindings & body]
    (if (seq bindings)
      `(when-let [~(first bindings) ~(second bindings)]
@@ -28,6 +29,11 @@ appear as unresolved symbols, as you can see when opening the file
 `src/hooks_workshop/macro_usage.clj` in an editor with clj-kondo integration, or
 when linting this file from the command line.
 
+## Exercise 1.0
+
+Open `src/hooks_workshop/macro_usage.clj` in your editor and notice that there
+are lint warnings in the `comment` section of part 1.
+
 ## `:unresolved-symbol`
 
 To get rid of those unresolved symbols, we can configure clj-kondo to suppress unresolved symbols. We can do so using the `:linters {:unresolved-symbol {:exclude ...}}` configuration.
@@ -35,7 +41,7 @@ To get rid of those unresolved symbols, we can configure clj-kondo to suppress u
 Read about its documentation
 [here](https://github.com/clj-kondo/clj-kondo/blob/master/doc/linters.md#unresolved-symbol).
 
-## Exercise 1
+## Exercise 1.1
 
 Add / change configuration in `.clj-kondo/config.edn` to get rid of the unresolved
 symbols.
@@ -57,7 +63,7 @@ Read the documentation
 Since `hooks-workshop.when-let*` is syntactically equivalent to
 `clojure.core/let`, that might be a better option.
 
-## Exercise 2
+## Exercise 1.2
 
 Remove the configuration of exercise 1 and use `:lint-as` instead.
 
@@ -92,6 +98,6 @@ still expects symbols inside the argument vector. But using the above config, cl
 (my-fn 1 2)
 ```
 
-## Exercise 3
+## Exercise 1.3
 
 Make up a custom `def` macro, put it inside `src/hooks_workshop/macros.clj`, use it from `src/hooks_workshop/macro_usage.clj`. Then use `def-catch-all` to fix linting.

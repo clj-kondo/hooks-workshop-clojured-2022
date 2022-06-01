@@ -7,4 +7,7 @@
  ;; part 1, exercise 2
  :lint-as {#_#_hooks-workshop.macros/when-let* clojure.core/let
            hooks-workshop.macros/kdefn clj-kondo.lint-as/def-catch-all}
+
+ ;; part 2
+ :hooks {:macroexpand {hooks-workshop.macros/kdefn2 hooks-workshop.macros/kdefn2}}
  }

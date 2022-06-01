@@ -39,7 +39,7 @@ See [Installation](https://github.com/clj-kondo/clj-kondo/blob/master/doc/instal
 
 - [Part 0](part-0/README.md): team up!
 - [Part 1](part-1/README.md): dealing with macros without hooks
-- Part 2: `:macroexpand` hooks
+- [Part 2](part-2/README.md): `:macroexpand` hooks
 - Part 3: `:analyze-call` hooks
 - Part 4: hooks with customized lint warnings
 - Part 5: distributing configuration and hooks

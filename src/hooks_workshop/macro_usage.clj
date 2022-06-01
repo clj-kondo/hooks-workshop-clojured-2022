@@ -1,6 +1,7 @@
 (ns hooks-workshop.macro-usage
   (:require [hooks-workshop.macros :refer [when-let*
-                                           kdefn]]))
+                                           kdefn
+                                           kdefn2]]))
 
 ;; part 1
 
@@ -20,4 +21,11 @@
   (kdefn my-fn [:foo :bar] (+ foo bar))
   (my-fn 1 2)
 
+  )
+
+;; part 2
+
+(comment
+
+  (kdefn2 my-fn [:foo :bar] (+ foo baz))
   )

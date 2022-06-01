@@ -1,0 +1,4 @@
+(ns hooks-workshop.macros)
+
+(defmacro kdefn2 [sym kargs & body]
+  `(defn ~sym ~(vec (map symbol kargs)) ~@body))
