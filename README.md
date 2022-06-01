@@ -32,3 +32,11 @@ Recommended:
 - When using Cursive, [clojure-extras](https://plugins.jetbrains.com/plugin/18108-clojure-extras/), the newest version
 
 See [Installation](https://github.com/clj-kondo/clj-kondo/blob/master/doc/install.md) and [Editor integration](https://github.com/clj-kondo/clj-kondo/blob/master/doc/editor-integration.md) for further details.
+
+## Agenda
+
+- Part 1: dealing with macros without hooks
+- Part 2: `:macroexpand` hooks
+- Part 3: `:analyze-call` hooks
+- Part 4: hooks with customized lint warnings
+- Part 5: distributing configuration and hooks
