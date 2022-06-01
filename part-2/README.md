@@ -126,7 +126,7 @@ For linting purposes we don't really care what it does behind the scenes, all we
 
 that it will create a var `User` and also a record `UserInstance`.
 
-So then we refer to `User` and `UserInstance` we do not want to get an unresolved symbol.
+So when we refer to `User` and `UserInstance` we do not want to get an unresolved symbol.
 
 ## Exercise 2.2
 
