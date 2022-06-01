@@ -106,3 +106,32 @@ and:
 ```
 
 does give an invalid arity warning.
+
+## Simplifying macros
+
+Macros in real life are often more complex than they need to be for clj-kondo to
+perform correct linting.
+
+As an example, let's look at `toucan.models/defmodel` [here](https://github.com/metabase/toucan/blob/9035024fd8e693234b745f10ea3d650e12f72bab/src/toucan/models.clj#L456).
+
+For linting purposes we don't really care what it does behind the scenes, all we care about is that when writing code like this:
+
+
+``` clojure
+(defmodel User :user
+  IModel
+  (types [_]
+    {:status :keyword}))
+```
+
+that it will create a var `User` and also a record `UserInstance`.
+
+So then we refer to `User` and `UserInstance` we do not want to get an unresolved symbol.
+
+## Exercise 2.2
+
+Add a configuration for `toucan.models/defmodel` by writing the most minimal
+configuration macro possible, such that no unresolved symbols are introduced.
+
+If you need help, you can check out the
+[metabase/metabase](https://github.com/metabase/metabase) Github repo.
