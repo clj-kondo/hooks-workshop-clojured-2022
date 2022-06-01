@@ -19,6 +19,8 @@ Clojure is required to get hooked!
 
 ## Prerequisites
 
+Before entering the workshop, please make sure you have the following in place.
+
 - A Clojure REPL with the following dependencies:
 
 ``` clojure
@@ -35,7 +37,8 @@ See [Installation](https://github.com/clj-kondo/clj-kondo/blob/master/doc/instal
 
 ## Agenda
 
-- Part 1: dealing with macros without hooks
+- [Part 0](part-0/README.md): team up!
+- [Part 1](part-1/README.md): dealing with macros without hooks
 - Part 2: `:macroexpand` hooks
 - Part 3: `:analyze-call` hooks
 - Part 4: hooks with customized lint warnings
