@@ -79,4 +79,12 @@ the first element.
 ## Exercise 2.0
 
 Open the `:macroexpand`
-[documentation](https://github.com/clj-kondo/clj-kondo/blob/master/doc/hooks.md#macroexpand).
+[documentation](https://github.com/clj-kondo/clj-kondo/blob/master/doc/hooks.md#macroexpand)
+and familiarize yourself with it.
+
+You can work on exercise 2.1 in parallel if you prefer learning by doing and
+reading up when necessary.
+
+## Exercise 2.1
+
+TODO
