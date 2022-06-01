@@ -49,7 +49,8 @@ Let's introduce a `:macroexpand` hook. There are two parts to this:
 ```
 
 Note that the macro in the `.clj_kondo` is identical to the macro we wrote. In
-real life, you will likely encounter macros that have to be adapted. Macros in
+real life, you will likely encounter macros that can be simplified. Our only
+goal here is to inform clj-kondo of the effects of the macro. Macros in
 `.clj_kondo` files are executed using [SCI](https://github.com/babashka/sci), a
 Clojure interpreter which allows sandboxed execution of code in the JVM and
 within the `clj-kondo` binary. Because the interpreter environment is
