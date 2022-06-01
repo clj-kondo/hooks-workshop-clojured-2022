@@ -124,7 +124,8 @@ For linting purposes we don't really care what it does behind the scenes, all we
     {:status :keyword}))
 ```
 
-that it will create a var `User` and also a record `UserInstance`.
+that it will create a var `User` and also a record `UserInstance` and of course,
+that that `defmodel` call itself is linted without false positives.
 
 So when we refer to `User` and `UserInstance` we do not want to get an unresolved symbol.
 
