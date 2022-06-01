@@ -12,5 +12,4 @@ complement each other in this workshop.
 Clone this repository on your computer, using `git clone
 https://github.com/clj-kondo/hooks-workshop-clojured-2022.git`, cd into the
 directory `hooks-workshop-clojured-2022` and open the project in your favorite
-editor.
-
+editor. Then open the file `src/hooks_workshop/macro_usage.clj`.
