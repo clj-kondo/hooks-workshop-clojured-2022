@@ -74,7 +74,8 @@ metadata on nodes. But when converting a keyword node into an s-expression, this
 location information is lost. As a best-effort solution, clj-kondo moves a
 warning which should be normally located at the keyword up to the nearest
 list. In the above example that is the outer list with the symbol `kdefn2` as
-the first element.
+the first element. Locations for symbols are preserved and this is why we see
+the unresolved symbol `baz` warning at the expected location.
 
 ## Exercise 2.0
 
