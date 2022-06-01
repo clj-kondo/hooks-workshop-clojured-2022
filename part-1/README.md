@@ -59,6 +59,7 @@ Since `hooks-workshop.when-let*` is syntactically equivalent to
 
 ## Exercise 2
 
-Remove the configuration of exercise one and use `:lint-as` instead.
+Remove the configuration of exercise 1 and use `:lint-as` instead.
 
-Notice that real unresolved symbols and unused bindings will be reported now.
+Notice that there will be no false positives and real issues like unresolved
+symbols and unused bindings will be reported correctly!
