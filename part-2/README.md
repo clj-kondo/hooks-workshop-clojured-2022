@@ -24,7 +24,7 @@ The config we had for `kdefn` worked great:
 
 but came with some downsides. E.g. in:
 
-```
+``` clojure
 (kdefn my-fn [:foo :bar] (+ foo baz))
 ```
 
