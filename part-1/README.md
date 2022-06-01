@@ -30,9 +30,9 @@ when linting this file from the command line.
 
 ## `:unresolved-symbol`
 
-To get rid of those unresolved symbols, we can configure clj-kondo.
+To get rid of those unresolved symbols, we can configure clj-kondo to suppress unresolved symbols. We can do so using the `:linters {:unresolved-symbol {:exclude ...}}` configuration.
 
-Read the documentation
+Read about its documentation
 [here](https://github.com/clj-kondo/clj-kondo/blob/master/doc/linters.md#unresolved-symbol).
 
 ## Exercise 1
