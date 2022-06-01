@@ -1,8 +1,6 @@
 # Part 1: dealing with macros without hooks
 
-Before hooks existed, clj-kondo already had a few ways to deal with macros.
-
-## Example
+Before hooks existed, clj-kondo already had a few ways to deal with macros. We will explain those using an example.
 
 Check out the awesome `when-let*` macro by Thierry Smeekes:
 
