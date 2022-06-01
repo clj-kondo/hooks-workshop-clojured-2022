@@ -66,7 +66,7 @@ symbols and unused bindings will be reported correctly!
 
 ## `def-catch-all`
 
-There is a special value supported in `:lint-as`, `clj-kondo.lint-as/def-catch-all` that is a miz of `:lint-as` and `:unresolved-symbol :exclude`.
+There is a special value supported in `:lint-as`, `clj-kondo.lint-as/def-catch-all` that is a mix of `:lint-as` and `:unresolved-symbol :exclude`.
 
 ``` clojure
 {:lint-as {hooks-workshop.macros/kdefn clj-kondo.lint-as/def-catch-all}}
