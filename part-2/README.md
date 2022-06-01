@@ -84,8 +84,25 @@ Open the `:macroexpand`
 and familiarize yourself with it.
 
 You can work on exercise 2.1 in parallel if you prefer learning by doing and
-reading up when necessary.
+reading up when necessary!
 
 ## Exercise 2.1
 
-TODO
+The library `prismatic/plumbing` contains a macro called `fn->` which expands
+into `(fn [x] (-> xx ~@body))`. See the source [here](https://github.com/plumatic/plumbing/blob/df7218c5056c1438a53811e71855af2aa805e589/src/plumbing/core.cljc#L294).
+
+Configure clj-kondo such that:
+
+``` clojure
+(def f (fn-> inc inc (inc)))
+```
+
+gives no invalid arity warning about `(inc)`
+
+and:
+
+``` clojure
+(f 1 2)
+```
+
+does give an invalid arity warning.
