@@ -28,8 +28,8 @@ but came with some downsides. E.g. in:
 (kdefn my-fn [:foo :bar] (+ foo baz))
 ```
 
-we would not see that `baz` was an unresolved symbol and that `bar` was an
-unused binding.
+we would not see that that `bar` was an unused binding and `baz` was an
+unresolved symbol.
 
 Let's introduce a `:macroexpand` hook. There are two parts to this:
 
