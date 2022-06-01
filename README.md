@@ -1,5 +1,22 @@
 # hooks-workshop-clojured-2022
 
+Getting hooked on clj-kondo!
+
+## Introduction
+
+[Clj-kondo](https://github.com/clj-kondo/clj-kondo) is a linter and static
+analyzer for Clojure/Script. It has out of the box support for syntactic
+constructs in Clojure, often defined by macros. For third party macros similar
+to Clojure's own, clj-kondo has an easy configuration option: `:lint-as`. But
+what about macros that invent their own language? You can disable linting for
+those, but what if there was something better. Clj-kondo hooks are a flexible
+way to teach clj-kondo's static analyzer about any macro. Not only will
+clj-kondo understand them and will you get useful linting feedback, you can
+insert your own checks and linting rules. As a library author you can export
+your hooks so every library user can profit. In this workshop we will learn how
+to write our own hooks using real-world examples. Only a basic understanding of
+Clojure is required to get hooked!
+
 ## Prerequisites
 
 - A Clojure REPL with the following dependencies:
