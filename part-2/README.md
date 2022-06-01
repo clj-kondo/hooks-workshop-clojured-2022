@@ -35,7 +35,7 @@ Let's introduce a `:macroexpand` hook. There are two parts to this:
 
 - An entry in `.clj-kondo/config.edn`:
 
-```
+``` clojure
 :hooks {:macroexpand {hooks-workshop.macros/kdefn2 hooks-workshop.macros/kdefn2}}
 ```
 
