@@ -1,8 +1,10 @@
-{
+{:skip-comments false
+
  ;; part 1, exercise 1
  :linters {:unresolved-symbol
            {:exclude [#_(hooks-workshop.macros/when-let*)
                       ]}}
  ;; part 1, exercise 2
- :lint-as {#_#_hooks-workshop.macros/when-let* clojure.core/let}
+ :lint-as {#_#_hooks-workshop.macros/when-let* clojure.core/let
+           hooks-workshop.macros/kdefn clj-kondo.lint-as/def-catch-all}
  }

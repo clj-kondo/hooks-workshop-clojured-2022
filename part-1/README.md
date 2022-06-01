@@ -63,3 +63,35 @@ Remove the configuration of exercise 1 and use `:lint-as` instead.
 
 Notice that there will be no false positives and real issues like unresolved
 symbols and unused bindings will be reported correctly!
+
+## `def-catch-all`
+
+There is a special value supported in `:lint-as`, `clj-kondo.lint-as/def-catch-all` that is a miz of `:lint-as` and `:unresolved-symbol :exclude`.
+
+``` clojure
+{:lint-as {hooks-workshop.macros/kdefn clj-kondo.lint-as/def-catch-all}}
+```
+
+It works for custom `def` or `defn` macros, by treating the first symbol as a
+newly introduced var and will ignore any unresolved symbols in the body of the
+call.
+
+Behold the awesome `kdefn` macro which is the similar to as `defn`, but uses
+keywords as argument bindings:
+
+``` clojure
+(defmacro kdefn [sym kargs & body]
+  `(defn ~sym ~(vec (map symbol kargs)) ~@body))
+```
+
+Unfortunately `:lint-as` + `clojure.core/defn` won't work here, since clj-kondo
+still expects symbols inside the argument vector. But using the above config, clj-kondo will not emit any warnings about this:
+
+``` clojure
+(kdefn my-fn [:foo :bar] (+ foo bar))
+(my-fn 1 2)
+```
+
+## Exercise 3
+
+Make up a custom `def` macro, put it inside `src/hooks_workshop/macros.clj`, use it from `src/hooks_workshop/macro_usage.clj`. Then use `def-catch-all` to fix linting.
