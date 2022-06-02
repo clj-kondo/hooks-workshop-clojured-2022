@@ -88,5 +88,20 @@ Now you should have sufficient information to turn `argvec-node` into a new node
 that contains symbols instead of keywords, that still have the location
 information of the keyword nodes.
 
-## Configuration
+## Hook function
+
+Now let's write our first analyze-hook function. The expected signature of such a function is map -> map. The function is called by clj-kondo with a map that contains:
+
+- `:node`: the input (rewrite-clj) node
+- `:config`: the clj-kondo configuration
+- `:lang`: either `:clj` or `:cljs`, indicating the language of this node
+- `:cljc`: either `true` or `false`, indicating if the node is from a `.cljc` file
+- `:filename`: the name of the file currently being analyzed
+- `:ns`: the name of the namespace currently being analyzed
+
+A hook function can return a map that contains:
+
+- `:node`: the transformed node. Clj-kondo will use this node instead of the input node to continue linting. When absent, the input node is used.
+
+## Exercise 3.4
 
