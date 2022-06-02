@@ -2,12 +2,14 @@
 
  ;; part 1, exercise 1
  :linters {:unresolved-symbol
-           {:exclude [#_(hooks-workshop.macros/when-let*)
+           {:report-duplicates true
+            :exclude [#_(hooks-workshop.macros/when-let*)
                       ]}}
  ;; part 1, exercise 2
  :lint-as {#_#_hooks-workshop.macros/when-let* clojure.core/let
            hooks-workshop.macros/kdefn clj-kondo.lint-as/def-catch-all}
 
  ;; part 2
- :hooks {:macroexpand {hooks-workshop.macros/kdefn2 hooks-workshop.macros/kdefn2}}
+ :hooks {:macroexpand {hooks-workshop.macros/kdefn2 hooks-workshop.macros/kdefn2}
+         :analyze-call {hooks-workshop.macros/kdefn3 hooks-workshop.macros/kdefn3}}
  }

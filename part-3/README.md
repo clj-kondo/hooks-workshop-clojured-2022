@@ -42,7 +42,10 @@ What is the tag of the `node` and each of its children?
 
 ## API
 
-The `clj-kondo.hooks-api` namespace exposes functions to deal with nodes: predicates to check what kind of node you are dealing with and functions to create new nodes.
+The `clj-kondo.hooks-api` namespace exposes functions to deal with nodes:
+predicates to check what kind of node you are dealing with and functions to
+create new nodes. View the API documentation
+[here](https://github.com/clj-kondo/clj-kondo/blob/master/doc/hooks.md#api).
 
 ## Exercise 3.2
 
@@ -105,3 +108,37 @@ A hook function can return a map that contains:
 
 ## Exercise 3.4
 
+In `macros.clj` we have `kdefn3` which is the same as `kdefn` from earlier in
+this workshop. Instead of a `:macroexpand` hook, add an `:analyze-call` hook configuration in `.clj-kondo/config.edn`. And put a function in `.clj-kondo/hooks_workshop/macros.clj_kondo` like this:
+
+``` clojure
+(defn kdefn3 [{:keys [node]}]
+  (prn node))
+```
+
+Then lint `src/hooks_workshop/macro_usage.clj` from the command line:
+
+``` clojure
+$ clj-kondo --lint src/hooks_workshop/macro_usage.clj
+```
+
+or with the clojure CLI:
+
+``` clojure
+clojure -M -m clj-kondo.main --lint src/hooks_workshop/macro_usage.clj
+```
+
+Because there is a call `(kdefn3 my-fn3 [:foo :bar] (+ foo baz))`, you should
+see the node being printed:
+
+``` clojure
+<list: (kdefn3 my-fn3 [:foo :bar] (+ foo baz))>
+```
+
+Return a new node by returning a map `{:node ...}`. Use the
+[API](https://github.com/clj-kondo/clj-kondo/blob/master/doc/hooks.md#api) to
+construct the new node.
+
+You can use the
+[REPL](https://github.com/clj-kondo/clj-kondo/blob/master/doc/hooks.md#developing-hooks-in-the-repl)
+for interactively developing the hook function.

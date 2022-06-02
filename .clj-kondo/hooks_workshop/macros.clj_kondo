@@ -1,4 +1,8 @@
-(ns hooks-workshop.macros)
+(ns hooks-workshop.macros
+  (:require [clj-kondo.hooks-api :as api]))
 
 (defmacro kdefn2 [sym kargs & body]
   `(defn ~sym ~(vec (map symbol kargs)) ~@body))
+
+(defn kdefn3 [{:keys [node]}]
+  (prn node))

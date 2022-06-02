@@ -2,6 +2,7 @@
   (:require [hooks-workshop.macros :refer [when-let*
                                            kdefn
                                            kdefn2
+                                           kdefn3
                                            fn->]]))
 
 ;; part 1
@@ -28,8 +29,16 @@
 
 (comment
 
-  (kdefn2 my-fn [:foo :bar] (+ foo baz))
+  (kdefn2 my-fn2 [:foo :bar] (+ foo baz))
 
   (def f (fn-> inc inc (inc)))
   (f 1 2) ;; expected: invalid arity warning
+  )
+
+;; part 3
+
+(comment
+
+  (kdefn3 my-fn3 [:foo :bar] (+ foo baz))
+
   )

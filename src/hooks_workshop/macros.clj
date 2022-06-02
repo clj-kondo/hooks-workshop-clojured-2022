@@ -24,3 +24,9 @@
   "A macro from plumbing.core. Same as (fn [x] (-> x ~@body))."
   [& body]
   `(fn [x#] (-> x# ~@body)))
+
+;; part 3
+(defmacro kdefn3
+  "Identical to `kdefn` but with a different clj-kondo config."
+  [sym kargs & body]
+  `(defn ~sym ~(vec (map symbol kargs)) ~@body))
