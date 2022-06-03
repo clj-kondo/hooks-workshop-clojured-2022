@@ -3,9 +3,9 @@
                                            kdefn
                                            kdefn2
                                            kdefn3
-                                           fn->]]))
+                                           ]]))
 
-;; part 1
+;; Part 1
 
 (comment
 
@@ -25,17 +25,30 @@
 
   )
 
-;; part 2
+;; Part 2
 
 (comment
 
   (kdefn2 my-fn2 [:foo :bar] (+ foo baz))
 
+  ;; Exercise 2.1
+  (require '[prismatic.plumbing :refer [fn->]])
   (def f (fn-> inc inc (inc)))
   (f 1 2) ;; expected: invalid arity warning
+
+  ;; Exercise 2.2
+  (require '[toucan.model :refer [defmodel]])
+  (defmodel User :user
+    IModel
+    (types [_]
+           {:status :keyword}))
+
+  User
+  UserInstance
+
   )
 
-;; part 3
+;; Part 3
 
 (comment
 

@@ -95,6 +95,7 @@ into `(fn [x] (-> xx ~@body))`. See the source [here](https://github.com/plumati
 Configure clj-kondo such that:
 
 ``` clojure
+(require '[prismatic.plumbing :refer [fn->]])
 (def f (fn-> inc inc (inc)))
 ```
 
@@ -119,6 +120,7 @@ For linting purposes we don't really care what it does behind the scenes, all we
 
 
 ``` clojure
+(require '[toucan.model :refer [defmodel]])
 (defmodel User :user
   IModel
   (types [_]
