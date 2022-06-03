@@ -1,5 +1,7 @@
 # Part 1: dealing with macros without hooks
 
+## Introduction 
+
 Before hooks existed, clj-kondo already had a few ways to deal with macros. We will explain those using an example.
 
 Check out the `when-let*` macro:
@@ -33,7 +35,7 @@ when linting this file from the command line.
 You can lint on the command line with `clj-kondo --lint <file>` (see [docs](https://github.com/clj-kondo/clj-kondo#command-line)) or with `clj
 -M:clj-kondo <file>` (see [docs](https://github.com/clj-kondo/clj-kondo/blob/master/doc/jvm.md#toolsdepsalpha)).
 
-## Exercise 1.0
+### Exercise 1.0
 
 **Learn about `:unresolved-symbol` linter**
 
@@ -47,7 +49,7 @@ To get rid of those unresolved symbols, we can configure clj-kondo to suppress u
 Read about its documentation
 [here](https://github.com/clj-kondo/clj-kondo/blob/master/doc/linters.md#unresolved-symbol).
 
-## Exercise 1.1
+### Exercise 1.1
 
 **Apply `:unresolved-symbol` linter exclusion**
 
@@ -68,7 +70,7 @@ a custom macro like a built-in macro.
 Read the documentation
 [here](https://github.com/clj-kondo/clj-kondo/blob/master/doc/config.md#lint-a-custom-macro-like-a-built-in-macro).
 
-## Exercise 1.2
+### Exercise 1.2
 
 Since `hooks-workshop.when-let*` is syntactically equivalent to
 `clojure.core/let`, that might be a better option.
@@ -106,6 +108,6 @@ still expects symbols inside the argument vector. But using the above config, cl
 (my-fn 1 2)
 ```
 
-## Exercise 1.3
+### Exercise 1.3
 
 Make up a custom `def` macro, put it inside `src/hooks_workshop/macros.clj`, use it from `src/hooks_workshop/macro_usage.clj`. Then use `def-catch-all` to fix linting.
