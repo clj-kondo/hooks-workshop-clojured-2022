@@ -35,6 +35,8 @@ You can lint on the command line with `clj-kondo --lint <file>` (see [docs](http
 
 ## Exercise 1.0
 
+**Learn about `:unresolved-symbol` linter**
+
 Open `src/hooks_workshop/macro_usage.clj` in your editor and notice that there
 are lint warnings in the `comment` section of part 1.
 
@@ -46,6 +48,8 @@ Read about its documentation
 [here](https://github.com/clj-kondo/clj-kondo/blob/master/doc/linters.md#unresolved-symbol).
 
 ## Exercise 1.1
+
+**Apply `:unresolved-symbol` linter exclusion**
 
 Add / change configuration in `.clj-kondo/config.edn` to get rid of the unresolved
 symbols.
