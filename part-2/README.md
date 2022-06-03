@@ -136,7 +136,7 @@ So when we refer to `User` and `UserInstance` we do not want to get an unresolve
 ## Exercise 2.2
 
 Add a configuration for `toucan.models/defmodel` by writing the most minimal
-configuration macro possible, such that no unresolved symbols are introduced.
+configuration macro possible, such that no unresolved symbols are introduced. You can see the unresolved symbols in `macro_usages.clj`.
 
 If you need help, you can check out the
 [metabase/metabase](https://github.com/metabase/metabase) Github repo.
