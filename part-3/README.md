@@ -55,6 +55,10 @@ play around with it in the REPL.
 
 ## Exercise 3.3
 
+*Transforming a node*
+
+This is a preparation for exercise 3.4.
+
 How can we transform a vector of keys to a vector of symbols?
 
 ``` clojure
@@ -137,7 +141,8 @@ see the node being printed:
 
 Return a new node by returning a map `{:node ...}`. Use the
 [API](https://github.com/clj-kondo/clj-kondo/blob/master/doc/hooks.md#api) to
-construct the new node.
+construct the new node. This new node will be analyzed by clj-kondo as the
+replacement for the old node and as such should improve linting.
 
 You can use the
 [REPL](https://github.com/clj-kondo/clj-kondo/blob/master/doc/hooks.md#developing-hooks-in-the-repl)
