@@ -16,7 +16,8 @@ Check out the `when-let*` macro:
      `(do ~@body))))
 ```
 
-It allows you to nest when-lets without the nesting:
+It allows you to use multiple binding and conditions, without nesting `when-let`
+expressions:
 
 ``` clojure
 (when-let* [x (odd? 3)
@@ -28,6 +29,9 @@ But clj-kondo has trouble understanding the syntax. The `x` and `y` bindings
 appear as unresolved symbols, as you can see when opening the file
 `src/hooks_workshop/macro_usage.clj` in an editor with clj-kondo integration, or
 when linting this file from the command line.
+
+You can lint on the command line with `clj-kondo --lint <file>` (see [docs](https://github.com/clj-kondo/clj-kondo#command-line)) or with `clj
+-M:clj-kondo <file>` (see [docs](https://github.com/clj-kondo/clj-kondo/blob/master/doc/jvm.md#toolsdepsalpha)).
 
 ## Exercise 1.0
 
