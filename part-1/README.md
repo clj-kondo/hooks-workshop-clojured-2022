@@ -68,10 +68,10 @@ a custom macro like a built-in macro.
 Read the documentation
 [here](https://github.com/clj-kondo/clj-kondo/blob/master/doc/config.md#lint-a-custom-macro-like-a-built-in-macro).
 
+## Exercise 1.2
+
 Since `hooks-workshop.when-let*` is syntactically equivalent to
 `clojure.core/let`, that might be a better option.
-
-## Exercise 1.2
 
 Remove the configuration of exercise 1 and use `:lint-as` instead.
 
