@@ -53,8 +53,9 @@ Read about its documentation
 
 **Apply `:unresolved-symbol` linter exclusion**
 
-Add / change configuration in `.clj-kondo/config.edn` to get rid of the unresolved
-symbols.
+Add / change configuration in `.clj-kondo/config.edn` to get rid of the
+unresolved symbols. After changing the configuration, make a small edit in the
+`macro_usage.clj` file to trigger clj-kondo to pick up new configuration.
 
 ## `:lint-as`
 
