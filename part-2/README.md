@@ -121,6 +121,7 @@ For linting purposes we don't really care what it does behind the scenes, all we
 
 ``` clojure
 (require '[toucan.model :refer [defmodel]])
+
 (defmodel User :user
   IModel
   (types [_]
