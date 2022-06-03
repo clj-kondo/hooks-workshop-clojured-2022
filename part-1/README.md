@@ -56,7 +56,7 @@ symbols.
 
 ## `:lint-as`
 
-When you have successfully completed the previous exercise, you will notice that
+When you have successfully completed exercise 1.0, you will notice that
 typos like `(assok :foo bar)` (`assok` instead of `assoc`) will also go
 unnoticed. Also notice that the unused binding `y` isn't reported. So even
 though we got rid of the false positive unresolved symbols, we also suppress
