@@ -11,7 +11,9 @@ clojure -M:clj-kondo --lint $(clojure -Spath) --copy-configs --skip-lint
 ```
 
 Any `.clj`, `.clj_kondo` and/or `.edn` file that lives on the classpath under a
-`clj-kondo.exports` directory is copied over.
+`clj-kondo.exports` directory is copied over. The `.clj_kondo` extension is
+recommended as to not confuse tools that try to load Clojure code on the
+classpath.
 
 The convention inside the `.clj-kondo` directory is that any two-level deep
 directory with a `.clj-kondo.edn` file is recognized automatically.
