@@ -52,10 +52,10 @@ and any configurations and hook namespaces on the configuration 'classpath' can 
 
 Because it is often handy to use the to-be exported configuration in the library
 that the config was written for in the first place, inside that library repo's
-`config.edn`, you can refer to that using:
+`.clj-kondo/config.edn`, you can refer to that using:
 
 ``` clojure
-:config-paths ["resources/clj-kondo.exports/org.name/lib.name"]
+:config-paths ["../resources/clj-kondo.exports/org.name/lib.name"]
 ```
 
 ## Exercise 5.0
