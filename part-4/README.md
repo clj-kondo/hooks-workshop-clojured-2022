@@ -37,7 +37,8 @@ Without this, clj-kondo will ignore the custom linter even if calls to `reg-find
 When creating custom linters it is recommended to use namespaced keywords that
 contain an organization name or library name. For example `clojure-lsp` has one
 custom linter with the name `:clojure-lsp/unused-public-var`. This way, your
-custom linter will never conflict with a name that clj-kondo chooses.
+custom linter will never conflict with a name that clj-kondo or another library
+chooses.
 
 ## Exercise 4.0
 
