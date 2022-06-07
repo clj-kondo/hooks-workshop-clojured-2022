@@ -20,7 +20,7 @@
 
 (comment
 
-  (kdefn my-fn [:foo :bar] (+ foo bar))
+  (kdefn my-fn [:foo :bar] (+ foo bar baz))
   (my-fn 1 2)
 
   )
@@ -32,12 +32,12 @@
   (kdefn2 my-fn2 [:foo :bar] (+ foo baz))
 
   ;; Exercise 2.1
-  (require '[prismatic.plumbing :refer [fn->]])
+  (require '[plumbing.core :refer [fn->]])
   (def f (fn-> inc inc (inc)))
   (f 1 2) ;; expected: invalid arity warning
 
   ;; Exercise 2.2
-  (require '[toucan.model :refer [defmodel]])
+  (require '[toucan.models :refer [defmodel]])
   (defmodel User :user
     IModel
     (types [_]

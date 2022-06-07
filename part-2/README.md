@@ -90,7 +90,7 @@ reading up when necessary!
 ## Exercise 2.1
 
 The library `prismatic/plumbing` contains a macro called `fn->` which expands
-into `(fn [x] (-> xx ~@body))`. See the source [here](https://github.com/plumatic/plumbing/blob/df7218c5056c1438a53811e71855af2aa805e589/src/plumbing/core.cljc#L294).
+into `(fn [x#] (-> x# ~@body))`. See the source [here](https://github.com/plumatic/plumbing/blob/df7218c5056c1438a53811e71855af2aa805e589/src/plumbing/core.cljc#L294).
 
 Configure clj-kondo such that:
 
