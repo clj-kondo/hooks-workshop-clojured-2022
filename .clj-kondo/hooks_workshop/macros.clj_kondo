@@ -4,5 +4,39 @@
 (defmacro kdefn2 [sym kargs & body]
   `(defn ~sym ~(vec (map symbol kargs)) ~@body))
 
+(defmacro fn-> [& body]
+  `(fn [x#] (-> x# ~@body)))
+
+(defmacro defmodel [name _kw & args]
+  (let [rec-name (symbol (str name "Instance"))]
+    `(do
+       (def ~name)
+       (defrecord ~rec-name [] ~@args))))
+
+(defn kw-node->sym-node [kw-node]
+  (let [k (api/sexpr kw-node)
+        _ (when-not (keyword? k)
+            (api/reg-finding! (merge {:type :acme/non-keyword-arg
+                                      :message (str "Dear colleague, keywords plz :) -- " k)
+                                      }
+                                     (meta kw-node))))
+        kname (name k)
+        sym-node (api/token-node (symbol kname))
+        sym-node (with-meta sym-node (meta kw-node))]
+    sym-node))
+
+(defn convert-argvec-node [argvec-node]
+  (let [children (:children argvec-node)
+        children (mapv kw-node->sym-node children)]
+    (assoc argvec-node :children children)))
+
 (defn kdefn3 [{:keys [node]}]
-  (prn node))
+  (let [[kdefn-node name-node argvec-node & body] (:children node)
+        defn-node (with-meta (api/token-node 'clojure.core/defn)
+                    (meta kdefn-node))
+        new-argvec-node (convert-argvec-node argvec-node)
+        new-node (api/list-node
+                  (list* defn-node name-node new-argvec-node body)) #_(with-meta
+                   
+                   (meta node))]
+    {:node new-node}))

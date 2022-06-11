@@ -34,14 +34,21 @@
   ;; Exercise 2.1
   (require '[plumbing.core :refer [fn->]])
   (def f (fn-> inc inc (inc)))
-  (f 1 2) ;; expected: invalid arity warning
+  (f 1) ;; expected: invalid arity warning
 
   ;; Exercise 2.2
-  (require '[toucan.models :refer [defmodel]])
+  (require '[toucan.models :refer [defmodel IModel]])
   (defmodel User :user
     IModel
     (types [_]
            {:status :keyword}))
+
+  #_'(do
+       (def User ,,,)
+       (defrecord UserInstance []
+         IModel ;; & args
+         (types [_]
+           {:status :keyword})))
 
   User
   UserInstance
@@ -52,6 +59,6 @@
 
 (comment
 
-  (kdefn3 my-fn3 [:foo :bar] (+ foo baz))
-
+  (kdefn3 my-fn3 [:foo :bar baz] (+ foo baz))
+  (inc :foo)
   )

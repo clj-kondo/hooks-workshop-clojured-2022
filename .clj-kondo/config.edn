@@ -3,13 +3,16 @@
  ;; part 1, exercise 1
  :linters {:unresolved-symbol
            {:report-duplicates true
-            :exclude [#_(hooks-workshop.macros/when-let*)
-                      ]}}
+            #_#_:exclude [(hooks-workshop.macros/when-let*)
+                          ]}
+           :acme/non-keyword-arg {:level :error}}
  ;; part 1, exercise 2
- :lint-as {#_#_hooks-workshop.macros/when-let* clojure.core/let
+ :lint-as {hooks-workshop.macros/when-let* clojure.core/let
            hooks-workshop.macros/kdefn clj-kondo.lint-as/def-catch-all}
 
  ;; part 2
- :hooks {:macroexpand {hooks-workshop.macros/kdefn2 hooks-workshop.macros/kdefn2}
+ :hooks {:macroexpand {plumbing.core/fn-> hooks-workshop.macros/fn->
+                       toucan.models/defmodel hooks-workshop.macros/defmodel
+                       hooks-workshop.macros/kdefn2 hooks-workshop.macros/kdefn2}
          :analyze-call {hooks-workshop.macros/kdefn3 hooks-workshop.macros/kdefn3}}
  }
